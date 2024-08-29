@@ -1,0 +1,387 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    padding-left: 50px;
+    box-sizing: border-box;
+    
+    /* Add these properties to center the container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Ensures the video container can be positioned absolutely */
+    overflow: hidden;
+}
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Place the video behind the dashboard */
+    transition: opacity 1s ease-in-out; /* Smooth transition effect */
+    opacity: 0; /* Start with hidden */
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the whole container without distortion */
+}
+.video-container.visible {
+    opacity: 1; /* Fade in */
+}
+video {
+    width: 100%;
+    height: auto; /* Adjust to fit container */
+}
+
+
+
+.dashboard {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap; /* add this to allow cards to wrap to new lines */
+    justify-content: center; /* center the cards horizontally */
+    height: 80vh; /* use vh unit to make it responsive to viewport height */
+    padding: 20px 20px;
+    padding-bottom: 30px;
+    background: linear-gradient(to right ,rgba(255, 255, 255, 0.7), rgba(131, 175, 237, 0.7), rgba(113, 161, 228, 0.7));
+    border: 1px solid rgba(109, 189, 235, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+
+/* Rest of the CSS code remains the same */
+
+
+.sidebar {
+    width: 250px;
+    /* height: 100%; */
+    background-color: rgba(113, 162, 231, 0.6);
+    padding: 20px 30px;
+    color: #fff;
+    border-radius: 25px;
+    box-sizing: border-box;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.search-bar input[type="search"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+}
+
+
+.location-info {
+    padding-top: 25px;
+}
+.location-info #location-name{
+    padding-top: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 5px;
+}
+.location-info #location-date{
+    font-size: 16px;
+    /* font-weight: bold; */
+    margin: 0;
+    padding-top: 5px;
+}
+.right-info {
+    display: flex;
+    align-items: center; /* align icon and time in the center */
+    justify-content: flex-end; /* align text to the right */
+    font-weight: bold;
+}
+
+#location-time {
+    display: flex;
+    align-items: center; /* align icon and text horizontally */
+    font-size: 14px;
+    gap: 5px;
+}
+
+#location-time img{
+    width: 20px; /* Adjust the image size if needed */
+    height: 20px;
+    vertical-align: middle;
+}
+
+.sunrise-image, .sunset-image {
+    display: inline-block;
+}
+
+.weather-info {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust spacing between icon and weather info */
+}
+
+/* Weather icon styling */
+.weather-icon {
+    /* Optionally adjust size and margins */
+    margin-top: 20px;
+    margin-right: 25px;
+}
+
+/* Styling for current weather section */
+.current-weather {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.weather-icon img{
+    border-radius: 50%;
+    filter: drop-shadow(0px 0px 10px rgba(255, 255, 0, 0.7));
+}
+/* Additional styles for temperature and weather condition */
+#current-temperature {
+    margin: 0;
+    padding-left: 10px;
+}
+
+#current-weather-condition {
+    margin: 0;
+}
+.sidebar-image img{
+    margin-top: 40px;
+    padding-top: 10px;
+    width: 224px;
+    height: 150px;
+    transform: scaleX(-1);
+}
+
+
+
+.main-content {
+    flex: 1;
+    padding-top: 5px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.welcome {
+    margin-bottom: 10px;
+}
+
+
+.weather-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.detail-card {
+    width: 130px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.detail-card p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.detail-card h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.info-boxes {
+    display: flex;
+    flex-wrap: wrap; /* Allow the boxes to wrap onto a new line if needed */
+    gap: 15px; /* Space between the boxes */
+    margin-bottom: 20px; /* Margin below the boxes */
+    /* border-radius: 15px; */
+}
+
+.info-box {
+    flex: 1; /* Allow the boxes to grow and fill available space */
+    min-width: 150px; /* Set a minimum width to prevent the boxes from getting too small */
+    padding: 15px; /* Add padding inside the boxes */
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+.large-box {
+    flex: 2; /* Make the large box take up more space */
+}
+
+.small-box {
+    flex: 1; /* Make the small box take up less space */
+}
+.divider {
+    border-top: 2px solid #ddd;
+    margin: 15px 0;
+}
+
+/* Heading for more details section */
+
+.more-details-heading h4 {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+
+
+/* Style for the weekly forecast container */
+.weekly-forecast {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.forecast-day {
+    flex: 0 0 84px; /* Prevent shrinking and growing */
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #201717;
+    border-radius: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.forecast-day .day {
+    font-weight: bold;
+}
+
+.forecast-day .icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.forecast-day .temp {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.forecast-day .min-temp {
+    color: #666;
+    font-size: 14px;
+}
+
+#info-box-title{
+    font-size: 18px;
+    margin-top: 1px;
+    padding-top: 3px;
+}
+#info-box-title2{
+    font-size: 18px;
+    margin: 1px;
+}
+/* Forecast Time Styling */
+.forecast-time {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+/* Icon and Description Styling */
+.forecast-time .icon {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Adds a small gap between the icon and the text */
+}
+
+.forecast-time .icon img {
+    width: 25px; /* Adjust icon size */
+    height: auto;
+}
+
+.forecast-time .description {
+    font-weight: 500; /* Light bold */
+    font-size: 14px; /* Adjust font size if necessary */
+}
+
+/* Styling for the time element */
+.forecast-time .time {
+    flex: 1;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: left;
+}
+
+/* Styling for the temperature */
+.forecast-time .temp {
+    flex: 1;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Divider Line Styling */
+.today-forecast hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 5px 0;
+}
+.welcome{
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.welcome img{
+    width: 50px;
+    height: auto;
+}
+
+.transitioning {
+    opacity: 0.5; /* Adjust for visual effect */
+}
+
+/* media */
+
+@media (max-width: 768px) {
+    .dashboard {
+      flex-direction: column; /* switch to vertical layout on smaller screens */
+      height: auto;
+    }
+    .dashboard > * {
+      flex: 1 1 100%; /* make each card take up full width on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .info-boxes {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .info-box {
+        min-width: 100%;
+    }
+}

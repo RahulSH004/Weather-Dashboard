@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Main JavaScript file -->
+
+</head>
+
+<body>
+    <script src="web.js" defer></script>
+    <div class="container" id="container">
+        <div class="video-container" id="video-container">
+        </div>
+        <div class="dashboard" id="dashboard">
+            <!-- Left Sidebar -->
+            <div class="sidebar" id="sidebar">
+                <div class="search-bar" id="search-bar">
+                    <input type="search" id="search-input" placeholder="Search location...">
+                </div>
+                <div class="location-info" id="location-info">
+                    <div class="left-info">
+                        <h2 id="location-name">New York, USA</h2>
+                        <p id="location-date">Mon 28 Sept</p>
+                        <p id="location-time-zone">12:00 PM</p>
+
+                    </div>
+                    <div class="right-info">
+                        <p id="location-time">
+                            <span class="sunrise-image">
+                                <img src="weather_icons/sunrise.png" alt="sunrise">
+                            </span> 07:19 |
+                            <span class="sunset-image">
+                                <img src="weather_icons/sunset.png" alt="sunset">
+                            </span> 19:32
+                        </p>
+                    </div>
+                </div>
+                <div class="weather-info">
+                    <div class="weather-icon" id="weather-icon">
+                        <img id="weather-icon-image" src="weather_icons/sunny.png" alt="Sunny">
+                    </div>
+                    <div class="current-weather" id="current-weather">
+                        <h1 id="current-temperature">27°</h1>
+                        <p id="current-weather-condition">Sunny</p>
+                    </div>
+                </div>
+                <div class="sidebar-image">
+                    <img src="weather_icons/pngegg.png" alt="image">
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="main-content" id="main-content">
+                <div class="welcome" id="welcome">
+                    <img src="weather_icons/favicon.svg" alt="Icon">
+                    <span class="main-message">
+                        <h3 id="main-message">Cloudy.IO</h3>
+                    </span>
+                </div>
+
+                <div class="info-boxes">
+                    <div class="info-box large-box">
+                        <h2 id="info-box-title">7-Day Forecast</h2>
+                        <div class="slider-wrapper">
+                            <div class="scroll-container">
+                                <div class="weekly-forecast">
+                                    <div class="forecast-day" id="forecast-day">
+                                        <p class="day" id="day">Sun</p>
+                                        <div class="icon" id="icon"><img src="weather_icons/sunny.png" alt="Sunny">
+                                        </div>
+                                        <p class="temp" id="max-temp">15°<span class="min-temp" id="min-temp">-3°</span>
+                                        </p>
+                                    </div>
+                                    <div class="forecast-day" id="forecast-day">
+                                        <p class="day" id="day">Mon</p>
+                                        <div class="icon" id="icon"><img src="weather_icons/09n.png"
+                                                alt="Cloudy with rain">
+                                        </div>
+                                        <p class="temp" id="max-temp">12°<span class="min-temp" id="min-temp">7°</span>
+                                        </p>
+                                    </div>
+                                    <div class="forecast-day">
+                                        <p class="day">Tue</p>
+                                        <div class="icon"><img src="weather_icons/11n.png" alt="Rain"></div>
+                                        <p class="temp">9°<span class="min-temp">7°</span></p>
+                                    </div>
+                                    <div class="forecast-day">
+                                        <p class="day">Wed</p>
+                                        <div class="icon"><img src="weather_icons/11n.png" alt="Rain"></div>
+                                        <p class="temp">8°<span class="min-temp">-1°</span></p>
+                                    </div>
+                                    <div class="forecast-day">
+                                        <p class="day">Thu</p>
+                                        <div class="icon"><img src="weather_icons/snowy.png" alt="Snow and Fog">
+                                        </div>
+                                        <p class="temp">5°<span class="min-temp">-2°</span></p>
+                                    </div>
+                                    <div class="forecast-day">
+                                        <p class="day">Fri</p>
+                                        <div class="icon"><img src="weather_icons/partlysunny.png"
+                                                alt="Sunny with Cloud">
+                                        </div>
+                                        <p class="temp">4°<span class="min-temp">-4°</span></p>
+                                    </div>
+                                    <div class="forecast-day">
+                                        <p class="day">Sat</p>
+                                        <div class="icon"><img src="weather_icons/sunny.png" alt="Sunny"></div>
+                                        <p class="temp">3°<span class="min-temp">-3°</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-box small-box">
+                        <h3 id="info-box-title2">Today Forecast</h3>
+                        <div class="today-forecast">
+                            <div class="forecast-time">
+                                <p class="time">08:00 AM</p>
+                                <div class="icon">
+                                    <img src="weather_icons/sunny.png" alt="Sunny">
+                                    <span class="description">Sunny</span>
+                                </div>
+                                <p class="temp">20°</p>
+                            </div>
+                            <hr>
+                            <div class="forecast-time">
+                                <p class="time">12:00 PM</p>
+                                <div class="icon">
+                                    <img src="weather_icons/sunny.png" alt="Sunny">
+                                    <span class="description">Sunny</span>
+                                </div>
+                                <p class="temp">25°</p>
+                            </div>
+                            <hr>
+                            <div class="forecast-time">
+                                <p class="time">04:00 PM</p>
+                                <div class="icon">
+                                    <img src="weather_icons/04n.png" alt="Cloudy">
+                                    <span class="description">Cloudy</span>
+                                </div>
+                                <p class="temp">22°</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Dividing Line -->
+                <div class="divider"></div>
+
+                <!-- More Details Heading -->
+                <div class="more-details-heading">
+                    <h4> More Details of Today's Weather</h4>
+                </div>
+
+                <div class="weather-details" id="weather-details">
+                    <!-- Detailed weather info (humidity, wind, precipitation, etc.) -->
+                    <div class="detail-card" id="humidity-card">
+                        <p id="humidity-label">Humidity</p>
+                        <h2 id="humidity-value">82%</h2>
+                        <p id="humidity-description">Normal</p>
+                    </div>
+                    <div class="detail-card" id="wind-card">
+                        <p id="wind-label">Wind</p>
+                        <h2 id="wind-value">12 km/h</h2>
+                        <p id="wind-description">Light breeze</p>
+                    </div>
+                    <div class="detail-card" id="precipitation-card">
+                        <p id="precipitation-label">Precipitation</p>
+                        <h2 id="precipitation-value">0%</h2>
+                        <p id="precipitation-description">No rain</p>
+                    </div>
+                    <div class="detail-card" id="Aqi-card">
+                        <p id="Aqi-label">AQI Index</p>
+                        <h2 id="Aqi-value">1</h2>
+                        <p id="Aqi-description">Good</p>
+                    </div>
+                    <div class="detail-card" id="UV-card">
+                        <p id="UV-label">UV Index</p>
+                        <h2 id="UV-card-value">1</h2>
+                        <p id="UV-card-description">Good</p>
+                    </div>
+                    <!-- Repeat for other details -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
