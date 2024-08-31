@@ -1,6 +1,6 @@
 # Weather Dashboard
 
-![Weather Dashboard Screenshot](image/Screenshot.png) <!-- Update the path based on where you place the screenshot -->
+![Weather Dashboard Screenshot](image/screenshot.png) <!-- Update the path based on where you place the screenshot -->
 
 A visually appealing and responsive weather dashboard application that provides real-time weather information and dynamically updates background videos based on the current weather conditions and time of day. This project is built using HTML, CSS, and JavaScript, and utilizes various APIs for fetching weather data and background videos.
 
