@@ -88,7 +88,7 @@ async function fetchWeather(cityName) {
     try {
         const currentDate = new Date().toISOString().split('T')[0];
         const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=${WEATHER_API_KEY}&q=${cityName}&aqi=yes`);
-        const astroresponse = await fetch(`http://api.weatherapi.com/v1/astronomy.json?key=${WEATHER_API_KEY}&q=${cityName}&dt=${currentDate}`);
+        const astroresponse = await fetch(`https://api.weatherapi.com/v1/astronomy.json?key=${WEATHER_API_KEY}&q=${cityName}&dt=${currentDate}`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${ response.status }`);
         }
@@ -131,7 +131,7 @@ async function fetchWeather(cityName) {
 
 async function forecast(cityName) {
     try {
-        const forecastresponse = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${WEATHER_API_KEY}&q=${cityName}&days=6&aqi=no&alerts=no`);
+        const forecastresponse = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${WEATHER_API_KEY}&q=${cityName}&days=6&aqi=no&alerts=no`);
         
         if (!forecastresponse.ok) {
             throw new Error(`HTTP error! status: ${ forecastresponse.status }`);
@@ -191,7 +191,7 @@ const aqiDesc = document.getElementById('Aqi-description');
 async function fetchDetails(cityName) {
     try {
         const detailsresponse = await fetch(`https://api.tomorrow.io/v4/weather/realtime?location=${cityName}&apikey=3bkGtuZ9tW5t85c4pF83NDwRMLoCJHBb`);
-        const detail = await fetch(`http://api.weatherapi.com/v1/current.json?key=bff8cf254ed842809ad75541242108&q=${cityName}&aqi=yes`);
+        const detail = await fetch(`https://api.weatherapi.com/v1/current.json?key=bff8cf254ed842809ad75541242108&q=${cityName}&aqi=yes`);
 
             console.log('Details response status:', detailsresponse.status);
             console.log('Detail response status:', detail.status);
@@ -246,7 +246,7 @@ async function fetchDetails(cityName) {
 async function fetchTodayForecast(cityName) {
     try {
         const currentDate = new Date().toISOString().split('T')[0]; // Current date in YYYY-MM-DD format
-        const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=bff8cf254ed842809ad75541242108&q=${cityName}&days=1&aqi=no&alerts=no`);
+        const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=bff8cf254ed842809ad75541242108&q=${cityName}&days=1&aqi=no&alerts=no`);
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
