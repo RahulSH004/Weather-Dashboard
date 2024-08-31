@@ -19,6 +19,7 @@ A visually appealing and responsive weather dashboard application that provides 
 
 ## **Overview**
 
+Check out the live website here: [My Website](https://weather-dashboard-lq35qkttb-rahul-singh-s-projects-3662b08b.vercel.app/)
 The Weather Dashboard is a user-friendly web application that allows users to search for weather information in any city. It provides current weather details, including temperature, humidity, wind speed, air quality, and UV index. The application also dynamically updates background videos based on the weather conditions and whether it is daytime or nighttime in the searched city.
 
 ## **Features**
